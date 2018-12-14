@@ -21,6 +21,16 @@ It also produces a `pkg-config` file if you prefer the classic way:
 $ g++ `pkg-config --cflags LibWebRTC` main.cpp -o main `pkg-config --libs LibWebRTC`
 ```
 
+## Branch-Heads
+
+I changed some things, make it could build >=M70 webrtc.
+
+## Build with H264
+
+```
+cmake -DWEBRTC_BRANCH_HEAD=refs/branch-heads/70 -DGN_EXTRA_ARGS="is_component_build=false proprietary_codecs=true use_openh264=true ffmpeg_branding=\"Chrome\" rtc_include_tests=false treat_warnings_as_errors=false use_custom_libcxx=false is_msan=false" ..
+```
+
 ## Status
 
 The following table displays the current state of this project, including
