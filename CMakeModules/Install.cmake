@@ -15,6 +15,13 @@ install(DIRECTORY "${CMAKE_BINARY_DIR}/include/"
         FILES_MATCHING PATTERN "*.h")
 
 #
+# Install abseil-cpp headers
+install(DIRECTORY "${CMAKE_BINARY_DIR}/include/webrtc/third_party/abseil-cpp/"
+        DESTINATION ${INSTALL_INCLUDE_DIR}/webrtc
+        COMPONENT include
+        FILES_MATCHING PATTERN "*.h")
+
+#
 # Install CMake Config file
 configure_file(${CMAKE_MODULE_PATH}/Templates/LibWebRTCConfig.cmake.in
                ${CMAKE_BINARY_DIR}/LibWebRTCConfig.cmake @ONLY)
