@@ -146,6 +146,7 @@ if (UNIX)
         DEPENDS ${_DEPENDENCIES}
     )
     set(_DEPENDENCIES ${_DEPENDENCIES} webrtc-gn-fix)
+endif (UNIX)
 
 libwebrtc_command(
     NAME webrtc-generate
