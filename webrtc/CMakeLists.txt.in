@@ -137,7 +137,7 @@ set(_DEPENDENCIES ${_DEPENDENCIES} webrtc-clang-format)
 include(Gn)
 
 if (UNIX AND NOT APPLE)
-    set(_FIX_GN_FILE_COMMAND sh ${CMAKE_SOURCE_DIR}/CMakeModules/fix-gn.sh)
+    set(_FIX_GN_FILE_COMMAND sh ${CMAKE_SOURCE_DIR}/fix-gn.sh)
     libwebrtc_command(
         NAME webrtc-gn-fix
         COMMAND ${_FIX_GN_FILE_COMMAND}

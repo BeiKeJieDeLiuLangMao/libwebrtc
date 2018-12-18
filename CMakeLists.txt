@@ -86,6 +86,7 @@ ExternalProject_Add(
     TMP_DIR ${CMAKE_BINARY_DIR}/webrtc/tmp
 
     PATCH_COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/webrtc/CMakeLists.txt.in ${CMAKE_BINARY_DIR}/webrtc/src/CMakeLists.txt
+    PATCH_COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/webrtc/fix-gn.sh ${CMAKE_BINARY_DIR}/webrtc/src/fix-gn.sh
     UPDATE_COMMAND ""
     INSTALL_COMMAND ""
 
