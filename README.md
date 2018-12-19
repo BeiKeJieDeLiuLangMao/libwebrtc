@@ -23,7 +23,7 @@ $ g++ `pkg-config --cflags LibWebRTC` main.cpp -o main `pkg-config --libs LibWeb
 
 ## Branch-Heads
 
-I changed some things, make it could build >=M70 webrtc.
+I changed some things, make it could build M70 webrtc.
 
 ## Build with H264 in CentOS
 
