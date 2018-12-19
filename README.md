@@ -25,7 +25,7 @@ $ g++ `pkg-config --cflags LibWebRTC` main.cpp -o main `pkg-config --libs LibWeb
 
 I changed some things, make it could build >=M70 webrtc.
 
-## Build with H264
+## Build with H264 in CentOS
 
 ```
 cmake -DWEBRTC_BRANCH_HEAD=refs/branch-heads/70 -DGN_EXTRA_ARGS="is_component_build=false proprietary_codecs=true use_openh264=true ffmpeg_branding=\"Chrome\" rtc_include_tests=false treat_warnings_as_errors=false is_debug=false enable_iterator_debugging=false use_custom_libcxx=false use_custom_libcxx_for_host=false" ..
