@@ -125,6 +125,18 @@ set(_CLANG_FORMAT_COMMAND download_from_google_storage${_SCRIPT_SUFFIX} --no_res
     --platform=${_PLATFORM} --no_auth --bucket chromium-clang-format
     -s src/buildtools/${_FOLDER}/clang-format${_SUFFIX}.sha1)
 
+if (UNIX AND NOT APPLE)
+  set(_FIX_GN_FILE_COMMAND sh ${CMAKE_SOURCE_DIR}/fix-gn.sh)
+  libwebrtc_command(
+          NAME webrtc-gn-fix
+          COMMAND ${_FIX_GN_FILE_COMMAND}
+          WORKING_DIRECTORY "${WEBRTC_PARENT_DIR}/src"
+          COMMENT "Fix Gn files"
+          DEPENDS webrtc-gn
+  )
+  set(_DEPENDENCIES ${_DEPENDENCIES} webrtc-gn-fix)
+endif (UNIX AND NOT APPLE)
+
 libwebrtc_command(
     NAME webrtc-clang-format
     COMMAND ${_CLANG_FORMAT_COMMAND}
@@ -135,18 +147,6 @@ libwebrtc_command(
 set(_DEPENDENCIES ${_DEPENDENCIES} webrtc-clang-format)
 
 include(Gn)
-
-if (UNIX AND NOT APPLE)
-    set(_FIX_GN_FILE_COMMAND sh ${CMAKE_SOURCE_DIR}/fix-gn.sh)
-    libwebrtc_command(
-        NAME webrtc-gn-fix
-        COMMAND ${_FIX_GN_FILE_COMMAND}
-        WORKING_DIRECTORY "${WEBRTC_PARENT_DIR}/src"
-        COMMENT "Fix Gn files"
-        DEPENDS ${_DEPENDENCIES}
-    )
-    set(_DEPENDENCIES ${_DEPENDENCIES} webrtc-gn-fix)
-endif (UNIX AND NOT APPLE)
 
 libwebrtc_command(
     NAME webrtc-generate
