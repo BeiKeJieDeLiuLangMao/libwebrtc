@@ -1,4 +1,4 @@
-set(_GEN_ARGS use_gold=false target_cpu=\\"${TARGET_CPU}\\" target_os=\\"${TARGET_OS}\\" is_component_build=false)
+set(_GEN_ARGS use_gold=false target_cpu=\\"${TARGET_CPU}\\" target_os=\\"${TARGET_OS}\\" is_component_build=false proprietary_codecs=true use_openh264=true ffmpeg_branding="Chrome" rtc_include_tests=false treat_warnings_as_errors=false is_debug=false enable_iterator_debugging=false use_custom_libcxx=false use_custom_libcxx_for_host=false)
 
 if (MSVC OR XCODE)
   set(_GEN_ARGS ${_GEN_ARGS} is_debug=$<$<CONFIG:Debug>:true>$<$<CONFIG:Release>:false>$<$<CONFIG:RelWithDebInfo>:false>$<$<CONFIG:MinSizeRel>:false>)
