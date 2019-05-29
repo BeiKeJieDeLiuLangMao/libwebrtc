@@ -106,8 +106,8 @@ Clone the repository, create an output directory, browse inside it,
 then run CMake.
 
 ```
-$ git clone https://github.com/aisouard/libwebrtc.git
-$ cd libwebrtc
+$ git clone https://github.com/BeiKeJieDeLiuLangMao/libwebrtc-m70.git
+$ cd libwebrtc-m70
 $ mkdir out
 $ cd out
 $ cmake ..
